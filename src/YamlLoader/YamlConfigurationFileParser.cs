@@ -41,17 +41,17 @@ namespace GranDen.YamlLoader
 
         private void VisitYamlNode(string context, YamlNode node)
         {
-            if (node is YamlScalarNode)
+            switch (node)
             {
-                VisitYamlScalarNode(context, (YamlScalarNode)node);
-            }
-            if (node is YamlMappingNode)
-            {
-                VisitYamlMappingNode(context, (YamlMappingNode)node);
-            }
-            if (node is YamlSequenceNode)
-            {
-                VisitYamlSequenceNode(context, (YamlSequenceNode)node);
+                case YamlScalarNode _:
+                    VisitYamlScalarNode(context, (YamlScalarNode)node);
+                    break;
+                case YamlMappingNode _:
+                    VisitYamlMappingNode(context, (YamlMappingNode)node);
+                    break;
+                case YamlSequenceNode _:
+                    VisitYamlSequenceNode(context, (YamlSequenceNode)node);
+                    break;
             }
         }
 

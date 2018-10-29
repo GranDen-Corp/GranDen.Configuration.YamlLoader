@@ -13,7 +13,6 @@ namespace GranDen.YamlLoaderTest.Util
         public static IFileProvider StringToFileProvider(string str)
         {
             return new TestFileProvider(str);
-
         }
 
         private class TestFile : IFileInfo
@@ -25,53 +24,17 @@ namespace GranDen.YamlLoaderTest.Util
                 _data = str;
             }
 
-            public bool Exists
-            {
-                get
-                {
-                    return true;
-                }
-            }
+            public bool Exists => true;
 
-            public bool IsDirectory
-            {
-                get
-                {
-                    return false;
-                }
-            }
+            public bool IsDirectory => false;
 
-            public DateTimeOffset LastModified
-            {
-                get
-                {
-                    throw new NotImplementedException();
-                }
-            }
+            public DateTimeOffset LastModified => throw new NotImplementedException();
 
-            public long Length
-            {
-                get
-                {
-                    throw new NotImplementedException();
-                }
-            }
+            public long Length => throw new NotImplementedException();
 
-            public string Name
-            {
-                get
-                {
-                    throw new NotImplementedException();
-                }
-            }
+            public string Name => throw new NotImplementedException();
 
-            public string PhysicalPath
-            {
-                get
-                {
-                    throw new NotImplementedException();
-                }
-            }
+            public string PhysicalPath => throw new NotImplementedException();
 
             public Stream CreateReadStream()
             {
@@ -81,7 +44,7 @@ namespace GranDen.YamlLoaderTest.Util
 
         private class TestFileProvider : IFileProvider
         {
-            private string _data;
+            private readonly string _data;
             public TestFileProvider(string str)
             {
                 _data = str;
