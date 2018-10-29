@@ -11,7 +11,7 @@ namespace GranDen.YamlLoaderTest
     {
         private static YamlConfigurationProvider LoadProvider(string Yaml)
         {
-            var p = new YamlConfigurationProvider(new YamlConfigurationSource { Optional = true });
+            var p = new YamlConfigurationProvider(new YamlLoader.FileConfigurationSource { Optional = true });
             p.Load(TestStreamHelpers.StringToStream(Yaml));
             return p;
         }
@@ -77,7 +77,7 @@ namespace GranDen.YamlLoaderTest
         {
             var yaml = @"";
 
-            var yamlConfigSrc = new YamlConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml) };
+            var yamlConfigSrc = new YamlLoader.FileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml) };
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSrc);

@@ -2,7 +2,7 @@
 
 namespace GranDen.YamlLoader
 {
-    public class YamlConfigurationSource : FileConfigurationSource
+    public class FileConfigurationSource : Microsoft.Extensions.Configuration.FileConfigurationSource
     {
         public override IConfigurationProvider Build(IConfigurationBuilder builder)
         {

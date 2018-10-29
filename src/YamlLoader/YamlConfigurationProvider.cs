@@ -7,7 +7,7 @@ namespace GranDen.YamlLoader
 {
     public class YamlConfigurationProvider : FileConfigurationProvider
     {
-        public YamlConfigurationProvider(YamlConfigurationSource source) : base(source) { }
+        public YamlConfigurationProvider(FileConfigurationSource source) : base(source) { }
 
         public override void Load(Stream stream)
         {
@@ -15,6 +15,7 @@ namespace GranDen.YamlLoader
             try
             {
                 var settingValue = parser.Parse(stream);
+                //TODO: send data to exporter
                 Data = settingValue;
             }
             catch (YamlException ex)

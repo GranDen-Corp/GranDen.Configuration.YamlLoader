@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D8D72FC2-C21
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YamlLoaderTest", "test\YamlLoaderTest\YamlLoaderTest.csproj", "{4C775D00-3315-491E-B5D2-131387ACCBAE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test_sample", "test_sample", "{7CAF67EA-6861-4ADE-8577-0BE316053C1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerifyYamlLoaderWebApp", "test_sample\VerifyYamlLoaderWebApp\VerifyYamlLoaderWebApp.csproj", "{E7F06C99-2DA8-4E84-A37F-FBDD49B0F48E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{4C775D00-3315-491E-B5D2-131387ACCBAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C775D00-3315-491E-B5D2-131387ACCBAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C775D00-3315-491E-B5D2-131387ACCBAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7F06C99-2DA8-4E84-A37F-FBDD49B0F48E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7F06C99-2DA8-4E84-A37F-FBDD49B0F48E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7F06C99-2DA8-4E84-A37F-FBDD49B0F48E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7F06C99-2DA8-4E84-A37F-FBDD49B0F48E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{88DE33A9-1223-42EE-B6A3-35C656AD06FE} = {D8D72FC2-C210-433E-BD7C-97DFA49D6B4B}
 		{4C775D00-3315-491E-B5D2-131387ACCBAE} = {5FF2336E-F325-4FE3-9C3B-DBB08890F6E2}
+		{E7F06C99-2DA8-4E84-A37F-FBDD49B0F48E} = {7CAF67EA-6861-4ADE-8577-0BE316053C1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B860382-58F7-429A-AC52-CBA897D0F55B}

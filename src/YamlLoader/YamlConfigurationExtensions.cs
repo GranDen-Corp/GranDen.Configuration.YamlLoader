@@ -72,7 +72,7 @@ namespace GranDen.YamlLoader
                 provider = new PhysicalFileProvider(Path.GetDirectoryName(path));
                 path = Path.GetFileName(path);
             }
-            var source = new YamlConfigurationSource
+            var source = new FileConfigurationSource
             {
                 FileProvider = provider,
                 Path = path,
