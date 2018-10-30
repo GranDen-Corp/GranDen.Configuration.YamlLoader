@@ -27,8 +27,6 @@ namespace VerifyYamlLoaderWebApp
                        {
                            builder.AddYamlFile(f.FullName, optional: true, reloadOnChange: true);
                        }
-
-                       builder.Build();
                    })
                 .UseStartup<Startup>();
     }
