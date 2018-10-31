@@ -14,9 +14,7 @@ namespace GranDen.YamlLoader
             var parser = new YamlConfigurationFileParser();
             try
             {
-                var settingValue = parser.Parse(stream);
-                //TODO: send data to exporter
-                Data = settingValue;
+                Data = parser.Parse(stream);
             }
             catch (YamlException ex)
             {
