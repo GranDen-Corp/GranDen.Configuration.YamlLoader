@@ -1,0 +1,121 @@
+Mission_MainData:
+  Mission_000:
+    ID: Mission_000
+    Mission_Name: '[Mission_000_Rescue_Cat]'
+    Mission_Image_ID: Mission_000_Image
+    Mission_Type: 0
+    Mission_Style: 1
+    Mission_Element: 0
+    Mission_Scene_ID: City_000
+    Mission_NPC_ID: Npc_Cat_000
+    Mission_Enemy_Counts: 1
+    Mission_Min_Level: 3
+    Mission_Max_Level: 2
+    Mission_Reward_ID: Npc_Cat_000
+    Mission_Max_Item_Get: 4
+    Mission_Stamina_Req: 1
+    Mission_Rarity: 0
+    Mission_Weight: 100
+    Mission_BonusWeight: 0
+    Mission_Bonus_Weight_Start_Time: 
+    Mission_Bonus_Weight_End_Time: 
+  Mission_001:
+    ID: Mission_001
+    Mission_Name: '[Mission_001_Rescue_Cat]'
+    Mission_Image_ID: Mission_000_Image
+    Mission_Type: 0
+    Mission_Style: 1
+    Mission_Element: 1
+    Mission_Scene_ID: City_000
+    Mission_NPC_ID: Npc_Cat_001
+    Mission_Enemy_Counts: 1
+    Mission_Min_Level: 3
+    Mission_Max_Level: 2
+    Mission_Reward_ID: Npc_Cat_001
+    Mission_Max_Item_Get: 4
+    Mission_Stamina_Req: 1
+    Mission_Rarity: 0
+    Mission_Weight: 80
+    Mission_BonusWeight: 0
+    Mission_Bonus_Weight_Start_Time: 
+    Mission_Bonus_Weight_End_Time: 
+  Mission_002:
+    ID: Mission_002
+    Mission_Name: '[Mission_002_Rescue_Cat]'
+    Mission_Image_ID: Mission_000_Image
+    Mission_Type: 0
+    Mission_Style: 0
+    Mission_Element: 2
+    Mission_Scene_ID: City_000
+    Mission_NPC_ID: Npc_Cat_002
+    Mission_Enemy_Counts: 2
+    Mission_Min_Level: 3
+    Mission_Max_Level: 2
+    Mission_Reward_ID: Npc_Cat_002
+    Mission_Max_Item_Get: 4
+    Mission_Stamina_Req: 1
+    Mission_Rarity: 1
+    Mission_Weight: 40
+    Mission_BonusWeight: 0
+    Mission_Bonus_Weight_Start_Time: 
+    Mission_Bonus_Weight_End_Time: 
+  Mission_003:
+    ID: Mission_003
+    Mission_Name: '[Mission_000_Rescue_Cat]'
+    Mission_Image_ID: Mission_000_Image
+    Mission_Type: 0
+    Mission_Style: 1
+    Mission_Element: 0
+    Mission_Scene_ID: City_000
+    Mission_NPC_ID: Npc_Cat_003
+    Mission_Enemy_Counts: 1
+    Mission_Min_Level: 3
+    Mission_Max_Level: 2
+    Mission_Reward_ID: Npc_Cat_003
+    Mission_Max_Item_Get: 4
+    Mission_Stamina_Req: 1
+    Mission_Rarity: 1
+    Mission_Weight: 20
+    Mission_BonusWeight: 0
+    Mission_Bonus_Weight_Start_Time: 
+    Mission_Bonus_Weight_End_Time: 
+  Mission_004:
+    ID: Mission_004
+    Mission_Name: '[Mission_000_Rescue_Cat]'
+    Mission_Image_ID: Mission_000_Image
+    Mission_Type: 0
+    Mission_Style: 1
+    Mission_Element: 2
+    Mission_Scene_ID: City_000
+    Mission_NPC_ID: Npc_Cat_004
+    Mission_Enemy_Counts: 1
+    Mission_Min_Level: 3
+    Mission_Max_Level: 2
+    Mission_Reward_ID: Npc_Cat_004
+    Mission_Max_Item_Get: 4
+    Mission_Stamina_Req: 1
+    Mission_Rarity: 2
+    Mission_Weight: 10
+    Mission_BonusWeight: 5
+    Mission_Bonus_Weight_Start_Time: 
+    Mission_Bonus_Weight_End_Time: 
+  Mission_005:
+    ID: Mission_005
+    Mission_Name: '[Mission_000_Rescue_Cat]'
+    Mission_Image_ID: Mission_000_Image
+    Mission_Type: 0
+    Mission_Style: 0
+    Mission_Element: 3
+    Mission_Scene_ID: City_000
+    Mission_NPC_ID: Npc_Cat_005
+    Mission_Enemy_Counts: 2
+    Mission_Min_Level: 3
+    Mission_Max_Level: 2
+    Mission_Reward_ID: Npc_Cat_005
+    Mission_Max_Item_Get: 4
+    Mission_Stamina_Req: 1
+    Mission_Rarity: 2
+    Mission_Weight: 5
+    Mission_BonusWeight: 5
+    Mission_Bonus_Weight_Start_Time: 
+    Mission_Bonus_Weight_End_Time: 

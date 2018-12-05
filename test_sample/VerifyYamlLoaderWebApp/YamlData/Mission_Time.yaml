@@ -1,0 +1,10 @@
+Mission_Time:
+  20:
+    ID: 20
+    Time_Probability: 80
+  40:
+    ID: 40
+    Time_Probability: 15
+  59:
+    ID: 59
+    Time_Probability: 5

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using VerifyYamlLoaderWebApp.TypedOptions;
 
 namespace VerifyYamlLoaderWebApp
 {
@@ -31,6 +33,9 @@ namespace VerifyYamlLoaderWebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.Configure<MissionMainDataOption>(option => Configuration.GetSection("Mission_MainData").Bind(option));
+            services.Configure<MissionRarityOption>(option => Configuration.GetSection("Mission_Rarity").Bind(option));
+            services.Configure<MissionTimeOption>(option => Configuration.GetSection("Mission_Time").Bind(option));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
