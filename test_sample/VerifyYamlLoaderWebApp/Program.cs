@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using GranDen.YamlLoader;
-using Microsoft.AspNetCore;
+﻿using System.IO;
+using GranDen.Configuration.YamlLoader;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
 
 namespace VerifyYamlLoaderWebApp
 {
@@ -15,11 +9,11 @@ namespace VerifyYamlLoaderWebApp
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            CreateHostBuilder(args).Build().Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+               Host.CreateDefaultBuilder(args)
                    .ConfigureAppConfiguration(builder =>
                    {
                        var fileList = new DirectoryInfo("YamlData").GetFiles("*.yaml", SearchOption.AllDirectories);
@@ -28,6 +22,9 @@ namespace VerifyYamlLoaderWebApp
                            builder.AddYamlFile(f.FullName, optional: true, reloadOnChange: true);
                        }
                    })
-                .UseStartup<Startup>();
+                   .ConfigureWebHostDefaults(webBuilder =>
+                   {
+                        webBuilder.UseStartup<Startup>();
+                   });
     }
 }

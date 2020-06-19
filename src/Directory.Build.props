@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <Version Condition=" '$(Version)'=='' ">1.1.0</Version>
+    <PackageReleaseNotes>1.1.0 : 
+      &#xD;&#xA;1. Upgrade to .NET Core 3.1 SDK.
+      &#xD;&#xA;2. Add some utility method for easier binding typed option class.
+      &#xD;&#xA;
+    </PackageReleaseNotes>
+  </PropertyGroup>
+</Project>

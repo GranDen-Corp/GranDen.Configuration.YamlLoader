@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
-using GranDen.YamlLoader;
+using GranDen.Configuration.YamlLoader;
 using Microsoft.Extensions.Configuration;
 using Xunit;
 
-namespace GranDen.YamlLoaderTest
+namespace YamlLoaderTest
 {
     public class YamlConfigurationExtensionsTests
     {

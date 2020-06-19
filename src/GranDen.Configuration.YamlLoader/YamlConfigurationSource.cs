@@ -1,9 +1,13 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace GranDen.YamlLoader
+namespace GranDen.Configuration.YamlLoader
 {
-    public class FileConfigurationSource : Microsoft.Extensions.Configuration.FileConfigurationSource
+    /// <summary>
+    /// Yaml configuration source
+    /// </summary>
+    public class YamlFileConfigurationSource : FileConfigurationSource
     {
+        /// <inheritdoc/>
         public override IConfigurationProvider Build(IConfigurationBuilder builder)
         {
             FileProvider = FileProvider ?? builder.GetFileProvider();

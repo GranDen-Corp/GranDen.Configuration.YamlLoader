@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Microsoft.Extensions.Configuration;
+using YamlDotNet.Core;
 using YamlDotNet.RepresentationModel;
 
-namespace GranDen.YamlLoader
+namespace GranDen.Configuration.YamlLoader
 {
     internal class YamlConfigurationFileParser
     {
@@ -20,15 +21,26 @@ namespace GranDen.YamlLoader
 
             // https://dotnetfiddle.net/rrR2Bb
             var yaml = new YamlStream();
-            yaml.Load(new StreamReader(input, detectEncodingFromByteOrderMarks: true));
+            var reader = new StreamReader(input, detectEncodingFromByteOrderMarks: true);
 
-            if (yaml.Documents.Any())
+            try
             {
-                var mapping = (YamlMappingNode)yaml.Documents[0].RootNode;
-
-                // The document node is a mapping node
-                VisitYamlMappingNode(mapping);
+                yaml.Load(reader);
             }
+            //NOTE: On some siutation, YAML parser in YamlDotNet 8.x doesn't throw parsing error exception correctly. 
+            catch (Exception ex) when (!(ex is YamlException))
+            {
+                throw new YamlException("YAML file parse error", ex);
+            }
+
+            if (!yaml.Documents.Any())
+            {
+                return _data;
+            }
+            var mapping = (YamlMappingNode)yaml.Documents[0].RootNode;
+
+            // The document node is a mapping node
+            VisitYamlMappingNode(mapping);
 
             return _data;
         }
