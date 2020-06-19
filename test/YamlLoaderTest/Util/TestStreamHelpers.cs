@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Primitives;
 
-namespace GranDen.YamlLoaderTest.Util
+namespace YamlLoaderTest.Util
 {
     public static class TestStreamHelpers
     {

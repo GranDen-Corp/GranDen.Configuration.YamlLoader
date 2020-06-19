@@ -1,19 +1,19 @@
 ﻿using System;
 using System.IO;
-using GranDen.YamlLoader;
-using GranDen.YamlLoaderTest.Util;
+using GranDen.Configuration.YamlLoader;
+using YamlLoaderTest.Util;
 using Microsoft.Extensions.Configuration;
 using Xunit;
 
-namespace GranDen.YamlLoaderTest
+namespace YamlLoaderTest
 {
     public class YamlConfigurationTest
     {
-        private static YamlConfigurationProvider LoadProvider(string Yaml)
+        private static YamlConfigurationProvider LoadProvider(string yamlString)
         {
-            var p = new YamlConfigurationProvider(new YamlLoader.FileConfigurationSource { Optional = true });
-            p.Load(TestStreamHelpers.StringToStream(Yaml));
-            return p;
+            var yamlConfigurationProvider = new YamlConfigurationProvider(new YamlFileConfigurationSource { Optional = true });
+            yamlConfigurationProvider.Load(TestStreamHelpers.StringToStream(yamlString));
+            return yamlConfigurationProvider;
         }
 
         [Fact]
@@ -77,7 +77,7 @@ namespace GranDen.YamlLoaderTest
         {
             var yaml = @"";
 
-            var yamlConfigSrc = new YamlLoader.FileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml) };
+            var yamlConfigSrc = new YamlFileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml) };
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSrc);

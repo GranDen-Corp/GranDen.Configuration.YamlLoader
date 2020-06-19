@@ -1,19 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2048
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YamlLoader", "src\YamlLoader\YamlLoader.csproj", "{88DE33A9-1223-42EE-B6A3-35C656AD06FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GranDen.Configuration.YamlLoader", "src\GranDen.Configuration.YamlLoader\GranDen.Configuration.YamlLoader.csproj", "{88DE33A9-1223-42EE-B6A3-35C656AD06FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{5FF2336E-F325-4FE3-9C3B-DBB08890F6E2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D8D72FC2-C210-433E-BD7C-97DFA49D6B4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YamlLoaderTest", "test\YamlLoaderTest\YamlLoaderTest.csproj", "{4C775D00-3315-491E-B5D2-131387ACCBAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GranDen.YamlLoaderTest", "test\YamlLoaderTest\YamlLoaderTest.csproj", "{4C775D00-3315-491E-B5D2-131387ACCBAE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test_sample", "test_sample", "{7CAF67EA-6861-4ADE-8577-0BE316053C1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerifyYamlLoaderWebApp", "test_sample\VerifyYamlLoaderWebApp\VerifyYamlLoaderWebApp.csproj", "{E7F06C99-2DA8-4E84-A37F-FBDD49B0F48E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerifyYamlLoaderWebApp", "test_sample\VerifyYamlLoaderWebApp\VerifyYamlLoaderWebApp.csproj", "{E7F06C99-2DA8-4E84-A37F-FBDD49B0F48E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

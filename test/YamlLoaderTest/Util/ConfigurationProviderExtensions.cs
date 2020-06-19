@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Configuration;
 
-namespace GranDen.YamlLoaderTest.Util
+namespace YamlLoaderTest.Util
 {
     public static class ConfigurationProviderExtensions
     {

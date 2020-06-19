@@ -7,7 +7,9 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/test_sample/VerifyYamlLoaderWebApp/VerifyYamlLoaderWebApp.csproj"
+                "${workspaceFolder}/test/YamlLoaderTest/GranDen.YamlLoaderTest.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
         }

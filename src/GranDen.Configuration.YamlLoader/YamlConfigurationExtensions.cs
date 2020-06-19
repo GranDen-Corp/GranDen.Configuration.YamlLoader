@@ -3,8 +3,11 @@ using System.IO;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.FileProviders;
 
-namespace GranDen.YamlLoader
+namespace GranDen.Configuration.YamlLoader
 {
+    /// <summary>
+    /// Extension methods for support YAML configuration
+    /// </summary>
     public static class YamlConfigurationExtensions
     {
         /// <summary>
@@ -72,7 +75,7 @@ namespace GranDen.YamlLoader
                 provider = new PhysicalFileProvider(Path.GetDirectoryName(path));
                 path = Path.GetFileName(path);
             }
-            var source = new FileConfigurationSource
+            var source = new YamlFileConfigurationSource
             {
                 FileProvider = provider,
                 Path = path,

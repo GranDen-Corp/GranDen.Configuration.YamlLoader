@@ -1,10 +1,10 @@
 ﻿using System.Linq;
-using GranDen.YamlLoader;
-using GranDen.YamlLoaderTest.Util;
+using GranDen.Configuration.YamlLoader;
+using YamlLoaderTest.Util;
 using Microsoft.Extensions.Configuration;
 using Xunit;
 
-namespace GranDen.YamlLoaderTest
+namespace YamlLoaderTest
 {
     public class SequenceTests
     {
@@ -18,7 +18,7 @@ namespace GranDen.YamlLoaderTest
                 - '11.12.13.14'
             ";
 
-            var yamlConfigSource = new YamlConfigurationProvider(new YamlLoader.FileConfigurationSource());
+            var yamlConfigSource = new YamlConfigurationProvider(new YamlFileConfigurationSource());
             yamlConfigSource.Load(TestStreamHelpers.StringToStream(yaml));
 
             Assert.Equal("1.2.3.4", yamlConfigSource.Get("ip:0"));
@@ -37,7 +37,7 @@ namespace GranDen.YamlLoaderTest
                   hidden: true
             ";
 
-            var yamlConfigSource = new YamlConfigurationProvider(new YamlLoader.FileConfigurationSource());
+            var yamlConfigSource = new YamlConfigurationProvider(new YamlFileConfigurationSource());
             yamlConfigSource.Load(TestStreamHelpers.StringToStream(yaml));
 
             Assert.Equal("1.2.3.4", yamlConfigSource.Get("ip:0:address"));
@@ -59,7 +59,7 @@ namespace GranDen.YamlLoaderTest
                   - '13.14.15.16'
                    ";
 
-            var yamlConfigSource = new YamlConfigurationProvider(new YamlLoader.FileConfigurationSource());
+            var yamlConfigSource = new YamlConfigurationProvider(new YamlFileConfigurationSource());
             yamlConfigSource.Load(TestStreamHelpers.StringToStream(yaml));
 
             Assert.Equal("1.2.3.4", yamlConfigSource.Get("ip:0:0"));
@@ -83,8 +83,8 @@ namespace GranDen.YamlLoaderTest
                 - '15.16.17.18'
             ";
 
-            var yamlConfigSource1 = new YamlLoader.FileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml1) };
-            var yamlConfigSource2 = new YamlLoader.FileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml2) };
+            var yamlConfigSource1 = new YamlFileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml1) };
+            var yamlConfigSource2 = new YamlFileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml2) };
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSource1);
@@ -112,8 +112,8 @@ namespace GranDen.YamlLoaderTest
                   1: '15.16.17.18'
             ";
 
-            var yamlConfigSource1 = new YamlLoader.FileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml1) };
-            var yamlConfigSource2 = new YamlLoader.FileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml2) };
+            var yamlConfigSource1 = new YamlFileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml1) };
+            var yamlConfigSource2 = new YamlFileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml2) };
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSource1);
@@ -141,8 +141,8 @@ namespace GranDen.YamlLoaderTest
                   3: '15.16.17.18'
             ";
 
-            var yamlConfigSource1 = new YamlLoader.FileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml1) };
-            var yamlConfigSource2 = new YamlLoader.FileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml2) };
+            var yamlConfigSource1 = new YamlFileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml1) };
+            var yamlConfigSource2 = new YamlFileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml2) };
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSource1);
@@ -166,7 +166,7 @@ namespace GranDen.YamlLoaderTest
               - '2'
             ";
 
-            var yamlConfigSource = new YamlLoader.FileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml) };
+            var yamlConfigSource = new YamlFileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml) };
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSource);
@@ -194,7 +194,7 @@ namespace GranDen.YamlLoaderTest
               '1text': 'f'
             ";
 
-            var yamlConfigSource = new YamlLoader.FileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml) };
+            var yamlConfigSource = new YamlFileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml) };
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSource);
@@ -217,7 +217,7 @@ namespace GranDen.YamlLoaderTest
         {
             var yaml = "setting1: '1'\nsetting2: '2'";
 
-            var yamlConfigSource = new YamlConfigurationProvider(new YamlLoader.FileConfigurationSource());
+            var yamlConfigSource = new YamlConfigurationProvider(new YamlFileConfigurationSource());
             yamlConfigSource.Load(TestStreamHelpers.StringToStream(yaml, withBom: true));
 
             Assert.Equal("1", yamlConfigSource.Get("setting1"));
