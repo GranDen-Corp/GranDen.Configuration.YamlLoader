@@ -12,7 +12,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
   sourceProject: 'src/GranDen.Configuration.YamlLoader/GranDen.Configuration.YamlLoader.csproj'
-  testNetCoreProject: 'test/YamlLoaderTest.csproj'
+  testNetCoreProject: 'test/YamlLoaderTest/YamlLoaderTest.csproj'
 
 stages:
 - stage: Build
