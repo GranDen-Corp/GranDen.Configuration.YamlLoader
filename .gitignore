@@ -590,4 +590,6 @@ fabric.properties
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 
 # End of https://www.gitignore.io/api/rider,csharp,visualstudio,visualstudiocode
-src/GranDen.GameLib.Bingo/GranDen.GameLib.Bingo.xml
+
+src/GranDen.Configuration.YamlLoader/GranDen.Configuration.YamlLoader.xml
+src/GranDen.Configuration.YamlData.Binder/GranDen.Configuration.YamlData.Binder.xml
