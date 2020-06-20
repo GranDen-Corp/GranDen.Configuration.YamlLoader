@@ -2,10 +2,38 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+
+        <Company>GranDen Inc.</Company>
+        <Authors>Isak Pao</Authors>
+
+        <Description>Utility package for easier load .NET Core configuration into Option patterns instance.</Description>
+
+        <Copyright>Copyright (c) 2020 GranDen Corp.(狂點軟體開發)</Copyright>
+
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/GranDen-Corp/YamlLoader.git</RepositoryUrl>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PackageTags>Yaml,configuration</PackageTags>
+        <PackageProjectUrl>https://www.nuget.org/packages/GranDen.Configuration.YamlData.Binder/</PackageProjectUrl>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DocumentationFile>./GranDen.Configuration.YamlData.Binder.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <DocumentationFile>./GranDen.Configuration.YamlData.Binder.xml</DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.5" />
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.5"/>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
     </ItemGroup>
 
 </Project>

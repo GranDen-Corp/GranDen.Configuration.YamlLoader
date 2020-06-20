@@ -7,7 +7,7 @@
     <Company>GranDen Inc.</Company>
     <Authors>Isak Pao</Authors>
 
-    <Description>Yaml File Loader for Backend game server</Description>
+    <Description>Make .NET Core configuration system support YAML( .yaml ) files.</Description>
 
     <Copyright>Copyright (c) 2020 GranDen Corp.(狂點軟體開發)</Copyright>
 

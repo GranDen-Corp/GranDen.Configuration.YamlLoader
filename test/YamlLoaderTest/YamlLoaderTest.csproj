@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\GranDen.Configuration.YamlLoader\GranDen.Configuration.YamlLoader.csproj" />
+    <ProjectReference Include="..\InRamStreamHelper\InRamStreamHelper.csproj" />
   </ItemGroup>
 
   <ItemGroup>
