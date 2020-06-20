@@ -6,14 +6,16 @@
 trigger:
 - dev
 - master
+- feature/*
+- bugfix/*
 
 pool:
   vmImage: 'ubuntu-latest'
 
 variables:
   buildConfiguration: 'Release'
-  sourceProject: 'src/GranDen.Configuration.YamlLoader/GranDen.Configuration.YamlLoader.csproj'
-  testNetCoreProject: 'test/YamlLoaderTest/YamlLoaderTest.csproj'
+  sourceProject: 'src/**/*.csproj'
+  testNetCoreProject: 'test/**/*Test.csproj'
 
 stages:
 - stage: Build
