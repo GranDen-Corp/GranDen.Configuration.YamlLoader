@@ -52,6 +52,7 @@ stages:
         inputs:
           codeCoverageTool: 'Cobertura'
           summaryFileLocation: '$(Build.SourcesDirectory)/**/TestResult/Coverage/*.cobertura.xml'
+          failIfCoverageEmpty: true
         displayName: "Publish code coverage report"
 
 - stage: Publish
@@ -79,6 +80,7 @@ stages:
           configuration: 'debug'
           includeSymbols: true
           includesource: true
+          modifyOutputPath: true
           versioningScheme: byPrereleaseNumber
           majorVersion: '$(NugetVerMajor)'
           minorVersion: '$(NugetVerMinor)'
