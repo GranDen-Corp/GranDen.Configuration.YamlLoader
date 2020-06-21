@@ -1,0 +1,9 @@
+<Project>
+    <PropertyGroup Condition="'$(IsTestProject)' == 'true'">
+    <UseSourceLink>true</UseSourceLink>
+    <CoverletOutputFormat>cobertura</CoverletOutputFormat>
+    <Exclude>[xunit.*]*</Exclude>
+    <CoverletOutput>$(MSBuildThisFileDirectory)/$(AssemblyName)/$(TargetFramework)/TestResults/Coverage/</CoverletOutput>
+    <CollectCoverage>true</CollectCoverage>
+  </PropertyGroup>
+</Project>

@@ -44,7 +44,7 @@ stages:
         inputs:
           command: test
           projects: '$(testNetCoreProject)'
-          arguments: '--configuration $(buildConfiguration)  /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./TestResults/Coverage/'
+          arguments: '--configuration $(buildConfiguration)'
           publishTestResults: true
           modifyOutputPath: true
         displayName: "Run NetCore test project"
