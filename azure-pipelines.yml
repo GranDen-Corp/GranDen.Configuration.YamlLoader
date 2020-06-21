@@ -51,7 +51,7 @@ stages:
       - task: PublishCodeCoverageResults@1
         inputs:
           codeCoverageTool: 'Cobertura'
-          summaryFileLocation: '$(Build.StagingDirectory)/**/TestResult/Coverage/*.cobertura.xml'
+          summaryFileLocation: '$(Build.SourcesDirectory)/**/TestResult/Coverage/*.cobertura.xml'
         displayName: "Publish code coverage report"
 
 - stage: Publish
