@@ -3,6 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <IsPackable>false</IsPackable>
+    <UseSourceLink>true</UseSourceLink>
+    <CoverletOutputFormat>cobertura</CoverletOutputFormat>
+    <Exclude>[xunit.*]*</Exclude>
+    <CoverletOutput>TestResult/Coverage/</CoverletOutput>
+    <CollectCoverage>false</CollectCoverage>
   </PropertyGroup>
 
   <ItemGroup>

@@ -44,14 +44,14 @@ stages:
         inputs:
           command: test
           projects: '$(testNetCoreProject)'
-          arguments: '--configuration $(buildConfiguration)'
+          arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true'
           publishTestResults: true
           modifyOutputPath: true
         displayName: "Run NetCore test project"
       - task: PublishCodeCoverageResults@1
         inputs:
           codeCoverageTool: 'Cobertura'
-          summaryFileLocation: '$(Build.StagingDirectory)/**/TestResults/Coverage/*.cobertura.xml'
+          summaryFileLocation: '$(Build.StagingDirectory)/**/TestResult/Coverage/*.cobertura.xml'
         displayName: "Publish code coverage report"
 
 - stage: Publish
