@@ -3,6 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <IsPackable>false</IsPackable>
+    <UseSourceLink>true</UseSourceLink>
+    <CoverletOutputFormat>cobertura</CoverletOutputFormat>
+    <Exclude>[xunit.*]*</Exclude>
+    <CoverletOutput>TestResult/Coverage/</CoverletOutput>
+    <CollectCoverage>false</CollectCoverage>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,12 +30,22 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\GranDen.Configuration.YamlLoader\GranDen.Configuration.YamlLoader.csproj" />
+    <ProjectReference Include="..\InRamStreamHelper\InRamStreamHelper.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="xunit.runner.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Remove="TestResult\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="TestResult\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="TestResult\**" />
   </ItemGroup>
 
 </Project>

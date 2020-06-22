@@ -6,14 +6,16 @@
 trigger:
 - dev
 - master
+- feature/*
+- bugfix/*
 
 pool:
   vmImage: 'ubuntu-latest'
 
 variables:
   buildConfiguration: 'Release'
-  sourceProject: 'src/GranDen.Configuration.YamlLoader/GranDen.Configuration.YamlLoader.csproj'
-  testNetCoreProject: 'test/YamlLoaderTest/YamlLoaderTest.csproj'
+  sourceProject: 'src/**/*.csproj'
+  testNetCoreProject: 'test/**/*Test.csproj'
 
 stages:
 - stage: Build
@@ -42,13 +44,15 @@ stages:
         inputs:
           command: test
           projects: '$(testNetCoreProject)'
-          arguments: '--configuration $(buildConfiguration)  /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=$(Build.SourcesDirectory)/TestResults/Coverage/'
+          arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true'
           publishTestResults: true
+          modifyOutputPath: true
         displayName: "Run NetCore test project"
       - task: PublishCodeCoverageResults@1
         inputs:
           codeCoverageTool: 'Cobertura'
-          summaryFileLocation: '$(Build.SourcesDirectory)/**/TestResults/Coverage/*.cobertura.xml'
+          summaryFileLocation: '$(Build.SourcesDirectory)/**/TestResult/Coverage/*.cobertura.xml'
+          failIfCoverageEmpty: true
         displayName: "Publish code coverage report"
 
 - stage: Publish
@@ -76,6 +80,7 @@ stages:
           configuration: 'debug'
           includeSymbols: true
           includesource: true
+          modifyOutputPath: true
           versioningScheme: byPrereleaseNumber
           majorVersion: '$(NugetVerMajor)'
           minorVersion: '$(NugetVerMinor)'

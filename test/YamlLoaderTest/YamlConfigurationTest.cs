@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using GranDen.Configuration.YamlLoader;
+using InRamStreamHelper;
 using YamlLoaderTest.Util;
 using Microsoft.Extensions.Configuration;
 using Xunit;
@@ -12,7 +13,7 @@ namespace YamlLoaderTest
         private static YamlConfigurationProvider LoadProvider(string yamlString)
         {
             var yamlConfigurationProvider = new YamlConfigurationProvider(new YamlFileConfigurationSource { Optional = true });
-            yamlConfigurationProvider.Load(TestStreamHelpers.StringToStream(yamlString));
+            yamlConfigurationProvider.Load(InRamStreamUtil.StringToStream(yamlString));
             return yamlConfigurationProvider;
         }
 
@@ -77,7 +78,7 @@ namespace YamlLoaderTest
         {
             var yaml = @"";
 
-            var yamlConfigSrc = new YamlFileConfigurationSource { FileProvider = TestStreamHelpers.StringToFileProvider(yaml) };
+            var yamlConfigSrc = new YamlFileConfigurationSource { FileProvider = InRamStreamUtil.StringToFileProvider(yaml) };
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSrc);
