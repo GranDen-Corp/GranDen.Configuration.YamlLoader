@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <IsPackable>false</IsPackable>
+        <UseSourceLink>true</UseSourceLink>
+        <CoverletOutputFormat>cobertura</CoverletOutputFormat>
+        <Exclude>[xunit.*]*</Exclude>
+        <CoverletOutput>TestResult/Coverage/</CoverletOutput>
+        <CollectCoverage>false</CollectCoverage>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="coverlet.collector" Version="1.3.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.msbuild" Version="2.9.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.5" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+        <PackageReference Include="xunit" Version="2.4.1" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.2">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\GranDen.Configuration.YamlData.Binder\GranDen.Configuration.YamlData.Binder.csproj" />
+      <ProjectReference Include="..\..\src\GranDen.Configuration.YamlLoader\GranDen.Configuration.YamlLoader.csproj" />
+      <ProjectReference Include="..\InRamStreamHelper\InRamStreamHelper.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="TestResult\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="TestResult\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="TestResult\**" />
+    </ItemGroup>
+
+</Project>
