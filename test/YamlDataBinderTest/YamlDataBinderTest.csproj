@@ -30,7 +30,20 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\GranDen.Configuration.YamlData.Binder\GranDen.Configuration.YamlData.Binder.csproj" />
+      <ProjectReference Include="..\..\src\GranDen.Configuration.YamlLoader\GranDen.Configuration.YamlLoader.csproj" />
       <ProjectReference Include="..\InRamStreamHelper\InRamStreamHelper.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="TestResult\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="TestResult\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="TestResult\**" />
     </ItemGroup>
 
 </Project>

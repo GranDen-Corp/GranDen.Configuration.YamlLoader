@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using GranDen.Configuration.YamlData.Binder;
 using Microsoft.Extensions.Configuration;
