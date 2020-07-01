@@ -3,20 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-
     <Company>GranDen Inc.</Company>
     <Authors>Isak Pao</Authors>
-
     <Description>Make .NET Core configuration system support YAML( .yaml ) files.</Description>
-
     <Copyright>Copyright (c) 2020 GranDen Corp.(狂點軟體開發)</Copyright>
-
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/GranDen-Corp/YamlLoader.git</RepositoryUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
-
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageTags>Yaml,configuration</PackageTags>
