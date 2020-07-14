@@ -1,8 +1,8 @@
 <Project>
   <PropertyGroup>
-    <Version Condition=" '$(Version)'=='' ">1.1.1</Version>
-    <PackageReleaseNotes>1.1.1 : 
-      &#xD;&#xA;Upgrade .NET Core 3.1 associate NuGet packages.
+    <Version Condition=" '$(Version)'=='' ">1.1.2-net5</Version>
+    <PackageReleaseNotes>1.1.2-net5 : 
+      &#xD;&#xA;1. .NET 5.0 preview 6 support
       &#xD;&#xA;
     </PackageReleaseNotes>
   </PropertyGroup>
