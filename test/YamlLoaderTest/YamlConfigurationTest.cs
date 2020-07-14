@@ -12,7 +12,7 @@ namespace YamlLoaderTest
     {
         private static YamlConfigurationProvider LoadProvider(string yamlString)
         {
-            var yamlConfigurationProvider = new YamlConfigurationProvider(new YamlFileConfigurationSource { Optional = true });
+            var yamlConfigurationProvider = new YamlConfigurationProvider(new YamlFileConfigurationSource {Optional = true});
             yamlConfigurationProvider.Load(InRamStreamUtil.StringToStream(yamlString));
             return yamlConfigurationProvider;
         }
@@ -78,7 +78,7 @@ namespace YamlLoaderTest
         {
             var yaml = @"";
 
-            var yamlConfigSrc = new YamlFileConfigurationSource { FileProvider = InRamStreamUtil.StringToFileProvider(yaml) };
+            var yamlConfigSrc = new YamlFileConfigurationSource {FileProvider = InRamStreamUtil.StringToFileProvider(yaml)};
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSrc);
@@ -154,13 +154,19 @@ namespace YamlLoaderTest
             var exception = Assert.Throws<FileNotFoundException>(() => config.Build());
 
             // Assert
-            Assert.StartsWith($"The configuration file 'NotExistingConfig.Yaml' was not found and is not optional.", exception.Message);
+            Assert.StartsWith($"The configuration file 'NotExistingConfig.Yaml' was not found and is not optional.",
+                exception.Message);
         }
 
         [Fact]
         public void YamlConfiguration_Does_Not_Throw_On_Optional_Configuration()
         {
-            var config = new ConfigurationBuilder().AddYamlFile("NotExistingConfig.Yaml", optional: true).Build();
+            var ex = Record.Exception(() =>
+            {
+                var config = new ConfigurationBuilder().AddYamlFile("NotExistingConfig.Yaml", optional: true).Build();
+            });
+
+            Assert.Null(ex);
         }
     }
 }

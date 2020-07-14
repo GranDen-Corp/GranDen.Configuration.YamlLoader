@@ -12,7 +12,7 @@ namespace YamlDataBinderTest
             public string Title { get; set; }
             public string Name { get; set; }
         }
-        
+
         [Fact]
         public void TestBindTypedOptionClassObject()
         {
@@ -20,16 +20,15 @@ namespace YamlDataBinderTest
             var builder = new ConfigurationBuilder();
             var inRamDict = new Dictionary<string, string>()
             {
-                {"Position:Title", "Dictionary_Title"},
-                {"Position:Name", "Dictionary_Name" },
+                {"Position:Title", "Dictionary_Title"}, {"Position:Name", "Dictionary_Name"},
             };
             builder.AddInMemoryCollection(inRamDict);
 
             var configuration = builder.Build();
-            
+
             //Act
             var obj = configuration.GetTypedOption<PositionOptions>("Position");
-            
+
             //Assert
             Assert.Equal("Dictionary_Title", obj.Title);
             Assert.Equal("Dictionary_Name", obj.Name);

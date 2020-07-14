@@ -16,8 +16,12 @@ namespace YamlLoaderTest
             // Arrange
             var configurationBuilder = new ConfigurationBuilder();
 
-            // Act and Assert
-            var ex = Assert.Throws<ArgumentException>(() => YamlConfigurationExtensions.AddYamlFile(configurationBuilder, path));
+            // Assert
+            var ex = Assert.Throws<ArgumentException>(() =>
+            {
+                // Act
+                configurationBuilder.AddYamlFile(path);
+            });
             Assert.Equal("path", ex.ParamName);
             Assert.StartsWith("File path must be a non-empty string.", ex.Message);
         }
@@ -27,9 +31,14 @@ namespace YamlLoaderTest
         {
             // Arrange
             var path = "file-does-not-exist.Yaml";
-
-            // Act and Assert
-            var ex = Assert.Throws<FileNotFoundException>(() => new ConfigurationBuilder().AddYamlFile(path).Build());
+            var configurationBuilder = new ConfigurationBuilder();
+            
+            // Assert
+            var ex = Assert.Throws<FileNotFoundException>(() =>
+            {
+                // Act
+                configurationBuilder.AddYamlFile(path).Build();
+            });
             Assert.StartsWith($"The configuration file '{path}' was not found and is not optional.", ex.Message);
         }
     }
