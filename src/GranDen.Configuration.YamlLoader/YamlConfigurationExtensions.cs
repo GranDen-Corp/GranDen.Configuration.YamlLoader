@@ -44,7 +44,8 @@ namespace GranDen.Configuration.YamlLoader
         /// <param name="optional">Whether the file is optional.</param>
         /// <param name="reloadOnChange">Whether the configuration should be reloaded if the file changes.</param>
         /// <returns>The <see cref="IConfigurationBuilder"/>.</returns>
-        public static IConfigurationBuilder AddYamlFile(this IConfigurationBuilder builder, string path, bool optional, bool reloadOnChange)
+        public static IConfigurationBuilder AddYamlFile(this IConfigurationBuilder builder, string path, bool optional,
+            bool reloadOnChange)
         {
             return AddYamlFile(builder, provider: null, path: path, optional: optional, reloadOnChange: reloadOnChange);
         }
@@ -59,12 +60,14 @@ namespace GranDen.Configuration.YamlLoader
         /// <param name="optional">Whether the file is optional.</param>
         /// <param name="reloadOnChange">Whether the configuration should be reloaded if the file changes.</param>
         /// <returns>The <see cref="IConfigurationBuilder"/>.</returns>
-        public static IConfigurationBuilder AddYamlFile(this IConfigurationBuilder builder, IFileProvider provider, string path, bool optional, bool reloadOnChange)
+        public static IConfigurationBuilder AddYamlFile(this IConfigurationBuilder builder, IFileProvider provider, string path,
+            bool optional, bool reloadOnChange)
         {
             if (builder == null)
             {
                 throw new ArgumentNullException(nameof(builder));
             }
+
             if (string.IsNullOrEmpty(path))
             {
                 throw new ArgumentException("File path must be a non-empty string.", nameof(path));
@@ -75,12 +78,10 @@ namespace GranDen.Configuration.YamlLoader
                 provider = new PhysicalFileProvider(Path.GetDirectoryName(path));
                 path = Path.GetFileName(path);
             }
+
             var source = new YamlFileConfigurationSource
             {
-                FileProvider = provider,
-                Path = path,
-                Optional = optional,
-                ReloadOnChange = reloadOnChange
+                FileProvider = provider, Path = path, Optional = optional, ReloadOnChange = reloadOnChange
             };
             builder.Add(source);
             return builder;

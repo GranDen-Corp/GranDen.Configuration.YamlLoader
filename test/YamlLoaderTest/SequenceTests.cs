@@ -84,8 +84,10 @@ namespace YamlLoaderTest
                 - '15.16.17.18'
             ";
 
-            var yamlConfigSource1 = new YamlFileConfigurationSource { FileProvider = InRamStreamUtil.StringToFileProvider(yaml1) };
-            var yamlConfigSource2 = new YamlFileConfigurationSource { FileProvider = InRamStreamUtil.StringToFileProvider(yaml2) };
+            var yamlConfigSource1 =
+                new YamlFileConfigurationSource {FileProvider = InRamStreamUtil.StringToFileProvider(yaml1)};
+            var yamlConfigSource2 =
+                new YamlFileConfigurationSource {FileProvider = InRamStreamUtil.StringToFileProvider(yaml2)};
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSource1);
@@ -113,8 +115,10 @@ namespace YamlLoaderTest
                   1: '15.16.17.18'
             ";
 
-            var yamlConfigSource1 = new YamlFileConfigurationSource { FileProvider = InRamStreamUtil.StringToFileProvider(yaml1) };
-            var yamlConfigSource2 = new YamlFileConfigurationSource { FileProvider = InRamStreamUtil.StringToFileProvider(yaml2) };
+            var yamlConfigSource1 =
+                new YamlFileConfigurationSource {FileProvider = InRamStreamUtil.StringToFileProvider(yaml1)};
+            var yamlConfigSource2 =
+                new YamlFileConfigurationSource {FileProvider = InRamStreamUtil.StringToFileProvider(yaml2)};
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSource1);
@@ -142,8 +146,10 @@ namespace YamlLoaderTest
                   3: '15.16.17.18'
             ";
 
-            var yamlConfigSource1 = new YamlFileConfigurationSource { FileProvider = InRamStreamUtil.StringToFileProvider(yaml1) };
-            var yamlConfigSource2 = new YamlFileConfigurationSource { FileProvider = InRamStreamUtil.StringToFileProvider(yaml2) };
+            var yamlConfigSource1 =
+                new YamlFileConfigurationSource {FileProvider = InRamStreamUtil.StringToFileProvider(yaml1)};
+            var yamlConfigSource2 =
+                new YamlFileConfigurationSource {FileProvider = InRamStreamUtil.StringToFileProvider(yaml2)};
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSource1);
@@ -167,7 +173,7 @@ namespace YamlLoaderTest
               - '2'
             ";
 
-            var yamlConfigSource = new YamlFileConfigurationSource { FileProvider = InRamStreamUtil.StringToFileProvider(yaml) };
+            var yamlConfigSource = new YamlFileConfigurationSource {FileProvider = InRamStreamUtil.StringToFileProvider(yaml)};
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSource);
@@ -195,7 +201,7 @@ namespace YamlLoaderTest
               '1text': 'f'
             ";
 
-            var yamlConfigSource = new YamlFileConfigurationSource { FileProvider = InRamStreamUtil.StringToFileProvider(yaml) };
+            var yamlConfigSource = new YamlFileConfigurationSource {FileProvider = InRamStreamUtil.StringToFileProvider(yaml)};
 
             var configurationBuilder = new ConfigurationBuilder();
             configurationBuilder.Add(yamlConfigSource);

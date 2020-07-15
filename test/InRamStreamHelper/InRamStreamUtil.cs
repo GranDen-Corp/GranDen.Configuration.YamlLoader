@@ -22,7 +22,7 @@ namespace InRamStreamHelper
 
             return memStream;
         }
-        
+
         public static string StreamToString(Stream stream)
         {
             stream.Seek(0, SeekOrigin.Begin);

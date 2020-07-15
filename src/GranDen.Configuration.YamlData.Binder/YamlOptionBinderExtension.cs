@@ -21,7 +21,7 @@ namespace GranDen.Configuration.YamlData.Binder
         {
             return configuration.GetSection(key).Get<T>();
         }
-        
+
         /// <summary>
         /// Get Typed option class instance form configuration
         /// </summary>
@@ -84,6 +84,7 @@ namespace GranDen.Configuration.YamlData.Binder
                 configurationSection.Bind(obj);
                 ret.Add(obj);
             }
+
             return ret;
         }
 
@@ -105,6 +106,7 @@ namespace GranDen.Configuration.YamlData.Binder
                 var list = configuration.GetYamlCollectionData<T>(sheetName, colName, condition);
                 retList.AddRange(list);
             }
+
             return retList;
         }
 
@@ -116,10 +118,11 @@ namespace GranDen.Configuration.YamlData.Binder
         /// <param name="conditionFunc"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static List<T> GetYamlCollectionData<T>(this IConfiguration configuration, string sheetName,Func<IConfigurationSection, bool> conditionFunc) where T : new()
+        public static List<T> GetYamlCollectionData<T>(this IConfiguration configuration, string sheetName,
+            Func<IConfigurationSection, bool> conditionFunc) where T : new()
         {
             var configurationSections = configuration.QuerySheet(sheetName).Where(conditionFunc);
-            
+
             var ret = new List<T>();
             foreach (var configurationSection in configurationSections)
             {
@@ -127,6 +130,7 @@ namespace GranDen.Configuration.YamlData.Binder
                 configurationSection.Bind(obj);
                 ret.Add(obj);
             }
+
             return ret;
         }
 
@@ -148,7 +152,8 @@ namespace GranDen.Configuration.YamlData.Binder
             string colName,
             string condition)
         {
-            var configurationSections = configuration.QuerySheet(sheetName).Where(x => x.GetSection(colName).Value == condition);
+            var configurationSections =
+                configuration.QuerySheet(sheetName).Where(x => x.GetSection(colName).Value == condition);
 
             return configurationSections.Select(configurationSection => configurationSection.Key).ToList();
         }

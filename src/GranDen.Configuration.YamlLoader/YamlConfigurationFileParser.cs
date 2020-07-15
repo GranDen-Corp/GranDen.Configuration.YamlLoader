@@ -10,7 +10,9 @@ namespace GranDen.Configuration.YamlLoader
 {
     internal class YamlConfigurationFileParser
     {
-        private readonly IDictionary<string, string> _data = new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        private readonly IDictionary<string, string> _data =
+            new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
         private readonly Stack<string> _context = new Stack<string>();
         private string _currentPath;
 
@@ -37,6 +39,7 @@ namespace GranDen.Configuration.YamlLoader
             {
                 return _data;
             }
+
             var mapping = (YamlMappingNode)yaml.Documents[0].RootNode;
 
             // The document node is a mapping node

@@ -31,7 +31,7 @@ namespace YamlDataBinderTest
             public DateTime? Mission_Bonus_Weight_Start_Time { get; set; }
             public DateTime? Mission_Bonus_Weight_End_Time { get; set; }
         }
-        
+
         [Fact]
         public void TestFetchDataSheetUsingGetYamlData()
         {
@@ -102,16 +102,17 @@ Mission_MainData:
     Mission_Bonus_Weight_Start_Time: 
     Mission_Bonus_Weight_End_Time: 
 ";
+
             #endregion
 
             var config = CreateConfiguration(yamlStr);
-            
+
             //Act
             var missionData = config.GetYamlData<MissionData>("Mission_MainData", "Mission_002");
-            
+
             //Assert
-            Assert.Equal("Mission_002",missionData.ID);            
-            Assert.Equal("[Mission_002_Rescue_Cat]",missionData.Mission_Name);
+            Assert.Equal("Mission_002", missionData.ID);
+            Assert.Equal("[Mission_002_Rescue_Cat]", missionData.Mission_Name);
             Assert.Equal("Mission_000_Image", missionData.Mission_Image_ID);
             Assert.Equal(0, missionData.Mission_Type);
             Assert.Equal(0, missionData.Mission_Style);
@@ -261,10 +262,11 @@ Mission_MainData:
     Mission_Bonus_Weight_Start_Time: 
     Mission_Bonus_Weight_End_Time: 
 ";
+
             #endregion
-            
+
             var config = CreateConfiguration(yamlStr);
-            
+
             //Act
             var allMissionList = config.GetYamlCollectionData<MissionData>("Mission_MainData");
             var filteredMissionList =
@@ -272,7 +274,7 @@ Mission_MainData:
             var queryMissionList =
                 config.GetYamlCollectionData<MissionData>("Mission_MainData",
                     configuration => configuration.GetSection("Mission_Style").Value == "1");
-            
+
             //Assert
             Assert.Equal(6, allMissionList.Count);
             Assert.Collection(allMissionList,
@@ -282,28 +284,29 @@ Mission_MainData:
                 m => Assert.Equal("Mission_003", m.ID),
                 m => Assert.Equal("Mission_004", m.ID),
                 m => Assert.Equal("Mission_005", m.ID)
-                );
-            
+            );
+
             Assert.Equal(3, filteredMissionList.Count);
             Assert.Collection(filteredMissionList,
                 m => Assert.Equal("Mission_001", m.ID),
                 m => Assert.Equal("Mission_002", m.ID),
                 m => Assert.Equal("Mission_004", m.ID)
             );
-            
+
             Assert.Equal(4, queryMissionList.Count);
             Assert.Collection(queryMissionList,
                 m => Assert.Equal("Mission_000", m.ID),
                 m => Assert.Equal("Mission_001", m.ID),
                 m => Assert.Equal("Mission_003", m.ID),
                 m => Assert.Equal("Mission_004", m.ID)
-                );
+            );
         }
 
         private static IConfigurationRoot CreateConfiguration(string rawString)
         {
-            var configurationBuilder = new ConfigurationBuilder(); 
-            var yamlConfigSource = new YamlFileConfigurationSource(){ FileProvider = InRamStreamUtil.StringToFileProvider(rawString)};
+            var configurationBuilder = new ConfigurationBuilder();
+            var yamlConfigSource =
+                new YamlFileConfigurationSource() {FileProvider = InRamStreamUtil.StringToFileProvider(rawString)};
             configurationBuilder.Add(yamlConfigSource);
             var config = configurationBuilder.Build();
             return config;
