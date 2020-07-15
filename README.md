@@ -6,12 +6,12 @@ Provides two NuGet packages for easily use YAML(**.yaml**) file as .NET Core con
 
 ## GranDen.Configuration.YamlLoader
 
-![Nuget](https://img.shields.io/nuget/v/GranDen.Configuration.YamlLoader?style=plastic)
+[![Nuget](https://img.shields.io/nuget/v/GranDen.Configuration.YamlLoader)](https://www.nuget.org/packages/GranDen.Configuration.YamlLoader/)
 
 ASP.NET Core Configuration Provider library for using YAML file to store settings, originally from [this](https://andrewlock.net/creating-a-custom-iconfigurationprovider-in-asp-net-core-to-parse-yaml/) article.
 
 ## GranDen.Configuration.YamlData.Binder
 
-![Nuget](https://img.shields.io/nuget/v/GranDen.Configuration.YamlData.Binder?style=plastic)
+[![Nuget](https://img.shields.io/nuget/v/GranDen.Configuration.YamlData.Binder)](https://www.nuget.org/packages/GranDen.Configuration.YamlData.Binder/)
 
 Utility package for easier load .NET Core configuration from YAML into [Options pattern](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options) instance.
