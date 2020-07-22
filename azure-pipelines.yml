@@ -10,6 +10,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 variables:
+  sdkVersion: 5.0.x
   buildConfiguration: Release
   sourceProject: src/**/*.csproj
   testNetCoreProject: test/**/*Test.csproj
@@ -21,9 +22,10 @@ stages:
       - job: Build
         steps:
           - task: UseDotNet@2
-            displayName: Use .NET 3.1 SDK
+            displayName: Use .NET 5 SDK
             inputs:
-              version: 3.1.x
+              version: $(sdkVersion)
+              includePreviewVersions: true
               packageType: sdk
           - task: DotNetCoreCLI@2
             displayName: Restore source project's NuGet package(s)
@@ -48,9 +50,10 @@ stages:
       - job: Test
         steps:
           - task: UseDotNet@2
-            displayName: Use .NET 3.1 SDK
+            displayName: Use .NET 5 SDK
             inputs:
-              version: 3.1.x
+              version: $(sdkVersion)
+              includePreviewVersions: true
               packageType: sdk
           - task: DotNetCoreCLI@2
             inputs:
@@ -80,9 +83,10 @@ stages:
       - job: Publish
         steps:
           - task: UseDotNet@2
-            displayName: Use .NET 3.1 SDK
+            displayName: Use .NET 5 SDK
             inputs:
-              version: 3.1.x
+              version: $(sdkVersion)
+              includePreviewVersions: true
               packageType: sdk
           - task: PowerShell@2
             displayName: Fetch version number from Directory.Build.props file
@@ -126,7 +130,7 @@ stages:
               nuGetFeedType: internal
               publishVstsFeed: GranDen
           - task: PublishSymbols@2
-            displayName: 'Publish pdb file(s)'
+            displayName: Publish pdb file(s)
             inputs:
               IndexSources: false,
               SearchPattern: '**/src/**/bin/**/*.pdb'

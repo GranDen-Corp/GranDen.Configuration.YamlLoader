@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Primitives;
@@ -73,8 +73,8 @@ namespace InRamStreamHelper
 
             public bool Exists => true;
             public long Length => _data.Length;
-            public string PhysicalPath => throw new NotImplementedException();
-            public string Name { get; } = "In Ram File";
+            public string PhysicalPath => null;
+            public string Name => "In Ram File";
             public DateTimeOffset LastModified => throw new NotImplementedException();
             public bool IsDirectory => true;
         }
